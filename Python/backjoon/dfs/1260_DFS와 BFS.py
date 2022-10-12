@@ -1,4 +1,5 @@
 import sys
+from collections import deque
 input = sys.stdin.readline
 
 def dfs(graph,V,visited):
@@ -10,8 +11,18 @@ def dfs(graph,V,visited):
             dfs(graph, i, visited)
 
 
-def bfs(graph,V,visited):
-    pass
+def bfs(graph,n,visited):
+    visited[n] = 1
+
+    queue = deque([n])
+
+    while queue:
+        v = queue.popleft()
+        print(v,end=' ')
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = 1
 
 
 def solution():
@@ -34,6 +45,7 @@ def solution():
 
     dfs(graph,V,visited)
     visited = [0] * (N + 1)
+    print()
     bfs(graph,V,visited)
 
 solution()
