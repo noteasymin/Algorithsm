@@ -1,27 +1,21 @@
 import sys
-from collections import deque
-def coin():
-    n,k = map(int,sys.stdin.readline().split())
-    s = deque()
-    cnt = 0
-    for i in range(n):
-        s.append(int(sys.stdin.readline()))
-    s.reverse()
+input = sys.stdin.readline
 
-    while True:
-        if s[0] <= k :
-            if k % s[0] == 0:
-                cnt += k // s[0]
-                k = s[0]*(k//s[0])
-                continue
-            else:
-                k = k - s[0]
-                cnt += 1
-                continue
-        else:
-            s.popleft()
-        if k == 0:
-            break
-    print(cnt)
 
-coin()
+def solution():
+    N, K = map(int,input().split())
+    N_lst = []
+    cnt = []
+    for i in range(N):
+        N_lst.append(int(input()))
+
+    N_lst.sort(reverse=True)
+
+    for i in range(len(N_lst)):
+
+        cnt.append(K // N_lst[i])
+        K -= cnt[i] * N_lst[i]
+
+
+    print(sum(cnt))
+solution()
