@@ -3,23 +3,19 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
-q1 = []
-q2 = []
-for i in range(N):
-    num = int(input())
-    cur = len(q) // 2
+heapr = [] # 최대힙
+heapl = [] # 최소힙
 
-    heapq.heappush(q, num)
-
-    if len(q) == 1 or len(q) == 2:
-        print(q[0])
-        continue
-
-    print(q,cur)
-
-    if len(q) % 2 != 0:
-        print(q[cur])
+for _ in range(N):
+    t = int(input())
+    if len(heapl) == len(heapr):
+        heapq.heappush(heapl, -t)
     else:
-        print(q[cur-1])
+        heapq.heappush(heapr, t)
 
-    cur += 1
+    if heapr and -heapl[0] > heapr[0]:
+        tmp = heapq.heappop(heapr)
+        tmp2 = -heapq.heappop(heapl)
+        heapq.heappush(heapl,-tmp)
+        heapq.heappush(heapr,tmp2)
+    print(-heapl[0])
