@@ -37,5 +37,6 @@ for i in range(N):
 
 num.sort()
 print(result)
+print(num)
 for i in range(len(num)):
     print(num[i])
