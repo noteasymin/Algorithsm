@@ -5,4 +5,5 @@ for i in range(N):
     h = list(map(int, input().split()))
     graph[i] = h
 
-print(graph)
+for i in range(101):
+    print(i)
