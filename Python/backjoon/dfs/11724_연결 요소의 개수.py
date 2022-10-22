@@ -20,8 +20,6 @@ for i in range(M):
     graph[u].append(v)
     graph[v].append(u)
 
-for i in range(len(graph)):
-    graph[i].sort()
 
 for i in range(1, N+1):
     if not visited[i]:
