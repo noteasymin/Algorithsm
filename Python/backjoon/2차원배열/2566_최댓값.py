@@ -9,4 +9,4 @@ for i in range(9):
     arr.append(temp)
 
 print(max_num)
-print(loc + 1, arr[loc].index(max_num) + 1)2
+print(loc + 1, arr[loc].index(max_num) + 1)
