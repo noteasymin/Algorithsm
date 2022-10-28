@@ -1,10 +1,11 @@
-T = int(input())
+t = int(input())
 
-for _ in range(T):
-    k = int(input())
-    n = int(input())
-    h = 0
-    for i in range(n+1):
-        h += i
+for _ in range(t):
+    floor = int(input())
+    num = int(input())
+    f = [x for x in range(1, num + 1)]
+    for k in range(floor):
+        for i in range(1, num):
+            f[i] += f[i-1]
 
-    print(h)
+    print(f[-1])
