@@ -1,23 +1,26 @@
-import math
+import sys
+
 N = int(input())
-lst = [i for i in range(1, N+1)]
-graph = []
-answer = []
-for i in range(N):
-    graph.append(list(map(int, input().split())))
+board = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
+blue = 0
+white = 0
 
-for i in lst:
-    for j in lst:
-        if i == j:
-            continue
+def solution(x, y, N):
+    global white, blue
+    color = board[x][y]
+    for i in range(x, x+N):
+        for j in range(y, y+N):
+            if color != board[i][j]:
+                solution(x,y, N//2)
+                solution(x, y + N // 2, N // 2)
+                solution(x + N // 2, y, N // 2)
+                solution(x + N // 2, y + N // 2, N // 2)
+                return
+    if color == 0:
+        white += 1
+    else:
+        blue += 1
 
-        temp = []
-        for k in range(N):
-            if lst[k] != i and lst[k] != j:
-                temp.append(lst[k])
-        a = temp[0]
-        b = temp[1]
-
-        answer.append(abs((graph[i-1][j-1] + graph[j-1][i-1]) - (graph[a-1][b-1] + graph[b-1][a-1])))
-
-print(answer)
+solution(0, 0, N)
+print(white)
+print(blue)
