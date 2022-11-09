@@ -15,7 +15,7 @@ def bfs(x, y):
             nx = a + dx[i]
             ny = b + dy[i]
 
-            if nx < 0 or ny < 0 or nx >= N or ny >=M:
+            if nx < 0 or ny < 0 or nx >= N or ny >= M:
                 continue
 
             if graph[nx][ny] == 0:
@@ -23,7 +23,7 @@ def bfs(x, y):
 
             if graph[nx][ny] == 1:
                 graph[nx][ny] = graph[a][b] + 1
-                queue.append((nx,ny))
+                queue.append((nx, ny))
 
     return graph[N-1][M-1]
 
