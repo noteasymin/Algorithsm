@@ -1,55 +1,44 @@
-import sys
 from collections import deque
-input = sys.stdin.readline
 
-m,n,h = map(int, input().split())
+M, N, H = map(int, input().split())
+box = []
+tomato = deque([])
+day = 0
 
+# 입력값이 3차원 구분이 되어있지 않기 때문에 H를 기준으로 리스트 작성
+for i in range(H):
+    tmp = []
+    for j in range(N):
+        tmp.append(list(map(int, input().split())))
+        for k in range(M):
+            #tmp에 추가된 리스트의 우너소 중 1이면 큐(tomato)에 추가
+            if tmp[j][k] == 1:
+                tomato.append([i,j,k])
+    # 2차원 배열인 tmp를 box에 추가하면서 3차원 배열 만들기
+    box.append(tmp)
+
+# 3차원 방향 설정
 dx = [-1,1,0,0,0,0]
 dy = [0,0,-1,1,0,0]
 dz = [0,0,0,0,-1,1]
 
-data = [[list(map(int, input().split())) for _ in range(n)] for _ in range(h)]
+while tomato:
+    x,y,z = tomato.popleft()
+    for i in range(6):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        nz = z + dz[i]
+        if 0 <= nx <H and 0 <= ny < N and 0 <= nz < M and box[nx][ny][nz] == 0:
+            # 비교한 토마토에 기존 토마토 + 1 --> 하루 지나가는 것 구현
+            box[nx][ny][nz] = box[x][y][z] + 1
+            tomato.append([nx,ny,nz])
 
-queue = deque()
+for i in box:
+    for j in i:
+        for k in j:
+            if k == 0:
+                print(-1)
+                exit()
+        day = max(day, max(j))
 
-# 3차원 bfs
-
-def bfs():
-    while queue:
-        # 높이,x,y 순서
-        z,x,y = queue.popleft()
-        for i in range(6):
-            nx = x + dx[i]
-            ny = y + dy[i]
-            nz = z + dz[i]
-
-            if -1<nx<n and -1<ny<m and -1<nz<h:
-
-                if data[nz][nx][ny] == 0:
-                    data[nz][nz][ny] = data[z][x][y] + 1
-                    queue.append((nz,nx,ny))
-
-for i in range(h):
-    for j in range(n):
-        for k in range(m):
-            if data[i][j][k] == 1:
-                queue.append((i,j,k))
-
-bfs()
-flag = 0
-result = -2
-for i in range(h):
-    for j in range(n):
-        for k in range(m):
-
-            if data[i][j][k] == 0:
-                flag = 1
-
-            result = max(result, data[i][j][k])
-
-if flag == 1:
-    print(-1)
-elif result == -1:
-    print(0)
-else:
-    print(result - 1)
+print(day - 1)
