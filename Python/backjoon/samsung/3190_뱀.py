@@ -1,4 +1,6 @@
+import sys
 from collections import deque
+input = sys.stdin.readline
 N = int(input())
 K = int(input())
 graph = [[0 for _ in range(N)] for i in range(N)]
@@ -12,7 +14,6 @@ snake = deque([[0,0]])
 graph[0][0] = 2
 head = [0,0]
 tail = [0,0]
-direction = ['E','S','W','N']
 loc = 0
 L = int(input())
 command_lst = deque()
