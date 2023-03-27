@@ -19,7 +19,8 @@ def solution(invitationPairs):
 
     for i in invitationPairs:
         result[i[0]] += 1
-        if i[1] not in invited
+        if i[1] not in invited:
+            pass
         if i[1] in invited:
             new_result[i[0]] += invited[i[1]] * 10
 
