@@ -10,10 +10,10 @@ def solution():
 
         temp = deque()
 
-        for k in range(i-1, j):
+        for k in range(i - 1, j):
             temp.appendleft(lst[k])
 
-        for k in range(i-1, j):
+        for k in range(i - 1, j):
             lst[k] = temp.popleft()
 
     for k in lst:
