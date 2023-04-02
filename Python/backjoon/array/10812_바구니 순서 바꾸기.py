@@ -12,9 +12,11 @@ def solution():
         i -= 1
         j -= 1
 
-        for _ in range(k):
-            lst.insert()
+        for a in range(i, j):
+            temp = lst[a]
+            
 
+        print(lst)
 
 
 solution()
