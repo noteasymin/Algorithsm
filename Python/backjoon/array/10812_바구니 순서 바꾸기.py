@@ -14,6 +14,7 @@ def solution():
 
         for a in range(i, j):
             temp = lst[a]
+            ?
 
 
         print(lst)
