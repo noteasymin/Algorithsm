@@ -14,7 +14,8 @@ def solution():
 
         for a in range(i, j):
             temp = lst[a]
-            ?
+            lst[a] = lst[a+1]
+            lst.insert(j, temp)
 
 
         print(lst)
