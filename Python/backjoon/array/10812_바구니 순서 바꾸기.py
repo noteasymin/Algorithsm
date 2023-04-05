@@ -3,22 +3,13 @@ from collections import deque
 
 def solution():
     n, m = map(int, input().split())
-
-    lst = deque([i for i in range(1, n + 1)])
-    print(lst)
-
+    box = [i + 1 for i in range(n)]
     for _ in range(m):
         i, j, k = map(int, input().split())
-        i -= 1
-        j -= 1
+        box = box[:i - 1] + box[k - 1:j] + box[i - 1:k - 1] + box[j:]
 
-        for a in range(i, j):
-            temp = lst[a]
-            lst[a] = lst[a+1]
-            lst.insert(j, temp)
-
-
-        print(lst)
+    for i in box:
+        print(i, end=" ")
 
 
 solution()
