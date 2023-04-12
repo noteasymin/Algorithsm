@@ -5,6 +5,5 @@
     <mapping directory="$PROJECT_DIR$/CGVTicketNotification" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/forCodingTest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/movie-web-service" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/movie-with-service" vcs="Git" />
   </component>
 </project>
