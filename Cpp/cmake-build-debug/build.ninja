@@ -55,6 +55,12 @@ build CMakeFiles/CodeUp_1001.dir/CodeUp/1001.cpp.o: CXX_COMPILER__CodeUp_1001_De
   OBJECT_DIR = CMakeFiles/CodeUp_1001.dir
   OBJECT_FILE_DIR = CMakeFiles/CodeUp_1001.dir/CodeUp
 
+build CMakeFiles/CodeUp_1001.dir/CodeUp/1020.cpp.o: CXX_COMPILER__CodeUp_1001_Debug /Users/jimin/Documents/GitHub/Algorithsm/Cpp/CodeUp/1020.cpp || cmake_object_order_depends_target_CodeUp_1001
+  DEP_FILE = CMakeFiles/CodeUp_1001.dir/CodeUp/1020.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=gnu++17
+  OBJECT_DIR = CMakeFiles/CodeUp_1001.dir
+  OBJECT_FILE_DIR = CMakeFiles/CodeUp_1001.dir/CodeUp
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CodeUp_1001
@@ -63,7 +69,7 @@ build CMakeFiles/CodeUp_1001.dir/CodeUp/1001.cpp.o: CXX_COMPILER__CodeUp_1001_De
 #############################################
 # Link the executable CodeUp_1001
 
-build CodeUp_1001: CXX_EXECUTABLE_LINKER__CodeUp_1001_Debug CMakeFiles/CodeUp_1001.dir/CodeUp/1001.cpp.o
+build CodeUp_1001: CXX_EXECUTABLE_LINKER__CodeUp_1001_Debug CMakeFiles/CodeUp_1001.dir/CodeUp/1001.cpp.o CMakeFiles/CodeUp_1001.dir/CodeUp/1020.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/CodeUp_1001.dir
   POST_BUILD = :
