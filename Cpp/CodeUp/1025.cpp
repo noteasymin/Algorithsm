@@ -12,6 +12,6 @@ int main() {
     printf("[%d]\n", c*100);
     printf("[%d]\n", d*10);
     printf("[%d]\n", e);
-    
+
     return 0;
 }
