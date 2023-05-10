@@ -9,6 +9,7 @@ def solution():
 
         b %= a
 
+    #최소 공배수
     print(res // a)
 
 solution()
