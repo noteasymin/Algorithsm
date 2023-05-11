@@ -11,7 +11,6 @@ def solution():
     jewels.sort(key=lambda x: x[1], reverse=True)
 
     answer = 0
-    print(jewels)
     for weight, price in jewels:
         if W > weight:
             answer += weight * price
@@ -21,5 +20,6 @@ def solution():
             answer += W * price
             break
 
+    print(answer)
 
 solution()
