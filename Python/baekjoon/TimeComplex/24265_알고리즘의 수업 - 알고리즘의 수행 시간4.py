@@ -1,6 +1,7 @@
 def solution():
     n = int(input())
-    print(n*3)
+
+    print(int(n * (n-1) - (n-1) * n / 2))
     print(2)
 
 
