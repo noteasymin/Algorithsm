@@ -7,7 +7,7 @@ def solution():
     n = int(input())
     result = set()
     cnt = 0
-    
+
     for i in range(n):
         nickname = input().rstrip()
 
