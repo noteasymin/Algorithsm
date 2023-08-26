@@ -1,6 +1,16 @@
-n = int(input())
-roads = list(map(int, input().split()))
-costs = list(map(int, input().split()))
+def solution():
+    n = int(input())
+    roads = list(map(int, input().split()))
+    price = list(map(int, input().split()))
+    low = price[0]
+    answer = roads[0] * low
 
-res = roads[0] * costs[0]
-m = costs[0]
+    for i in range(1, len(roads)):
+        if low > price[i]:
+            low = price[i]
+        answer += low * roads[i]
+
+    print(answer)
+
+
+solution()
