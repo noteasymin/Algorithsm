@@ -3,8 +3,9 @@ from collections import deque
 
 def bfs():
     q = deque()
-    q.append(n)
+    q.append(n);
     while q:
+
         x = q.popleft()
         if x == k:
             print(dist[x])
