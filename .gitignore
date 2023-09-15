@@ -7,3 +7,16 @@ Leetcode/.idea/inspectionProfiles/profiles_settings.xml
 .DS_Store
 *.xml
 *.xml
+*.bin
+*.lock
+*.properties
+*.probe
+Java/Goorm-Challenge/.idea/.name
+*.gradle
+*.uniqueId1
+*.uniqueId0
+*.jar
+Java/Goorm-Challenge/gradlew
+*.bat
+.idea/.name
+*.xml
