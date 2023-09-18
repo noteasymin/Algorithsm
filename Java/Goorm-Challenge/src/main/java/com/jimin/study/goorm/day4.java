@@ -28,6 +28,7 @@ public class day4 {
         sortedArr.addAll(left);
         sortedArr.addAll(right);
 
+        System.out.println(sortedArr);
         if (sortedArr.equals(arr)) {
             int sum = sortedArr.stream().mapToInt(Integer::intValue).sum();
             System.out.println(sum);
